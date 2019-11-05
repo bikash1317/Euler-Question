@@ -5,24 +5,29 @@ Find the sum of all the primes below two million.
 */
 public class Ques10
 {
-public static void main (String arg[])
-{
-long i , j , sum=2 , c=0;
-for (i=3;i<2000000;i+=2)
-{
-c=0;
-for(j=3;j<=i/2;j+=2)
-{
-if(i%j==0)
-{
-c=1;
-break;
-}
-}
-if(c==0)
-sum=sum+i;
-}
-System.out.println(sum);
-}
+	public static void main(String[] args) 
+	{
+		int i ;
+		long sum =2;
+		for(i=3;i<2000000;i=i+2)
+		{
+			boolean p = isPrime(i);
+			if(p==true)
+				sum = sum + i ;
+
+		}
+		System.out.println(sum); 
+		
+	}
+	 public static boolean isPrime(int a)
+	 {
+	 	int i ;
+	 	for(i=3;i*i<=a;i=i+2)
+	 	{
+	 		if(a%i==0)
+	 			return false;
+	 	}
+	 	return true;
+	 }
 }
 
